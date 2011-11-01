@@ -1,5 +1,8 @@
-require "wproot/version"
+require 'open3'
 
-module Wproot
+require "wproot/version"
+require "wproot/haml"
+
+module WPRoot
   # Your code goes here...
 end
