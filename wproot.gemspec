@@ -14,4 +14,7 @@ Gem::Specification.new do |gem|
   gem.name          = "wproot"
   gem.require_paths = ["lib"]
   gem.version       = WPRoot::VERSION
+
+  gem.add_dependency 'compass', '~> 0.12.alpha.0'
+  gem.add_development_dependency 'rspec', '~> 2.7.0'
 end
