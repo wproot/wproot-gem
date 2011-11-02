@@ -38,4 +38,22 @@ HAML
 HTML
 )
   end
+  it "should evaluate compass/sass code" do
+    compass = WPRoot::Compass.new <<SASS
+import css3
+body
+  section
+    background: darken(white, 100%)
+    &:hover
+      background: linear-gradient(white, black)
+SASS
+
+    compass.compile.should eq(<<CSS
+body section {
+  background: black; }
+  body section:hover {
+    background: linear-gradient(#ffffff, #000000); }
+CSS
+)
+  end
 end

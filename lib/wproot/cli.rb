@@ -31,7 +31,12 @@ module WPRoot
 
           compile = lambda do |base, relative|
             path = File.join(base, relative)
-            p path
+            dir = File.dirname(path)
+            new_path = File.join(dir, File.basename(path, '.sass'))
+            File.open(new_path, 'w') do |f|
+              f.write(Compass.new(File.read(path)).compile)
+              puts ">>> Compiled #{path} to #{new_path}"
+            end
           end
           update &compile
           create &compile
