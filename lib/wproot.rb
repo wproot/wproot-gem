@@ -1,4 +1,5 @@
 require 'open3'
+require 'fssm'
 
 require "wproot/cli"
 require "wproot/haml"
