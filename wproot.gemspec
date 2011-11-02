@@ -12,7 +12,7 @@ Gem::Specification.new do |gem|
   gem.files         = `git ls-files`.split("\n")
   gem.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   gem.name          = "wproot"
-  gem.require_paths = ["lib"]
+  gem.require_paths = ["lib", "vendor"]
   gem.version       = WPRoot::VERSION
 
   gem.add_dependency 'compass', '~> 0.12.alpha.0'
